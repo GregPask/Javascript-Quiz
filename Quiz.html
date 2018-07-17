@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Liverpool Fc Quiz </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<style>
+   
+   *{
+       box-sizing: border-box;
+   }
+   body {
+       margin: 0;
+      
+       font-family:'Times New Roman', Times, serif
+   }
+   #container {
+       width: 100%;
+       min-width: 320px;
+       display: grid;
+      grid-template-columns: 1fr ;
+      grid-template-rows: 150px 50px 1fr 300px;
+      grid-area: 
+      "footer"
+      "side"
+      "main"
+      "header"
+   }
+
+   #header {
+       grid-area: "header";
+       text-align: center;
+       font-size: 2em;
+       color: #ccc;
+       background-color: #333;
+       padding: 1em;
+   }
+   #side {
+       grid-area: "side";
+       color: #333;
+       background-color: #ccc;
+       padding: 0.5em;
+   }
+
+   
+
+   
+   #ul1 {
+       list-style-type: none;
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       padding: 0;
+       margin: 0;
+       text-align: center;
+      
+   }
+
+   li {
+ 
+    padding: 0.5em;
+    margin-left: 
+   }
+
+    a{
+        text-decoration: none;
+        background-color: rgb(45, 113, 158);
+        color: white;
+        padding: 0.6em;
+        border: 1px solid #333;
+      
+        
+    }
+
+    a:hover{
+        background-color: rgb(105, 104, 104);
+    }
+
+    #main {
+        background-color: #666;
+        padding: 1em;
+        color: #ccc;
+        grid-area: "main";
+        min-height: 500px;
+    }
+
+    #footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        font-size: 1.5em;
+        padding: 1em;
+        grid-area: "footer";
+    }
+
+    #btn1 {
+        text-align: center;
+        font-size: 1.4em;
+        margin: auto;
+       
+    }
+    #center {
+        margin: auto;
+        text-align: center;
+    }
+
+    #questions {
+        display: none;
+    }
+
+    #ul2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-row-gap: 1em;
+       
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .li2 {
+      
+    }
+    
+    .a2 {
+        
+        font-size: 1em;
+        background-color: rgb(48, 123, 146);
+        width: 150px;
+        border-radius: 1em;
+      
+    }
+
+    .a2:hover{
+        background-color: rgb(58, 150, 179);
+    }
+
+    #results {
+        display: none;
+        text-align: center;
+        color: #ccc;
+       
+        font-size: 2.6em;
+    }
+    #results a {
+        
+    }
+
+    #score {
+        font-size: 3em;
+        color: #ccc;
+        text-align: center;
+        display: none;
+        padding: 2em 1em;
+    }
+
+    #playAgain{
+        display: none;
+        text-align: center;
+    }
+
+  
+    
+</style>
+</head>
+<body>
+<div id="container">
+<header id="header">Liverpool Fc Quiz App</header>
+<div id="side">
+    <ul id="ul1">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+<div id="main">
+    <div id="start">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         Est odio rem minus eligendi voluptatibus blanditiis quas! 
+         Doloribus impedit sunt quidem unde fuga ipsa consectetur nisi 
+         ipsam officia explicabo minus, corrupti dolorem perferendis
+          quos a et!</p>
+          <hr>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Est odio rem minus eligendi voluptatibus blanditiis quas! 
+                Doloribus impedit sunt quidem unde fuga ipsa consectetur nisi 
+                ipsam officia explicabo minus, corrupti dolorem perferendis
+                 quos a et!</p>
+                 <br>
+                 <div id="center">
+                <p style="text-align: start">Hello and Welcome to this Liverpool Fc Quiz. Press start to begin!</p>  
+                <br>
+                <a id="btn1" href="#">Start</a>
+                </div>
+                <br>
+                <hr>
+            </div> <!-- end of start -->
+
+        
+            <div id="questions">
+                   
+                <h2 id="new">Question 1</h2>
+                <p id="starter">Who is the current owner of Liverpool football club.</p>
+                <ul id="ul2">
+                    <li class="li2"><a  id="a1"onclick = "answer('a1')" class= "a2" href="#">John W. Henry</a></li>
+                    <li class="li2"><a id="a2" onclick = "answer('a2')" class= "a2" href="#">Ronald Coeman</a></li>
+                    <li class="li2"><a id="a3" onclick = "answer('a3')" class= "a2" href="#">Andy Dufraine</a></li>
+                    <li class="li2"><a id="a4" onclick = "answer('a4')" class= "a2" href="#">Greg Pask</a></li>
+
+                </ul>
+                   
+    
+            </div>
+
+            <div id="results">
+                <p>Click to see results!</p>
+                <div id="results1"><a id="btn2" href="#">Results!</a></div>
+                <br>
+              
+
+            </div>
+
+
+            <div id="score">
+                Score: 
+                 
+            </div>
+            <div id="playAgain">
+                <a id="btn3" href="#">Play Again!</a>
+            </div>
+</div> <!-- end of Main-->
+
+<div id="footer">
+    Footer@2018.com
+</div>
+
+
+</div> <!-- end of container --> 
+
+    
+</div>
+
+
+
+<script>
+     questionNumber = 0;
+
+
+     var correct = 0;
+     var incorrect = 0;
+function answer(param){
+
+    var answer = document.getElementById(param);
+    var me = answer.innerHTML;
+    
+    checkValidity(questionNumber,me)
+    }
+
+
+function checkValidity(questionNumber,me){
+    if(me == answers[questionNumber]){
+        console.log("Correct");
+       correct ++;
+       changeQuestion();
+        
+    } else {
+        console.log("Incorrect");
+        incorrect ++;
+        changeQuestion();
+
+    }
+}
+
+
+
+function changeQuestion(){
+    questionNumber ++;
+    if(questionNumber == 5){
+            gameOverMan();
+    } else {
+    //title
+    document.getElementById("new").innerHTML = "Question " + (questionNumber+1) ;
+    document.getElementById('starter').innerHTML = questions[questionNumber];
+  
+   document.getElementById("a1").innerHTML = options[questionNumber][0];
+   document.getElementById("a2").innerHTML = options[questionNumber][1];
+   document.getElementById("a3").innerHTML = options[questionNumber][2];
+   document.getElementById("a4").innerHTML = options[questionNumber][3];
+   
+    }
+    
+}
+
+
+questions = [
+    ["Who is the current owner of Liverpool football club?"],
+    ["Who was Liverpool's top scorer in the 2017-18 Season?"],
+    ["What Team won the premier league in 2017-18?"],
+    ["Who is the captain of Liverpool Fc?"],
+    ["What place did Liverpool finish in the 2017-18 season?"]
+
+];
+
+
+options = [
+    ["John W. Henry","Ronald Coeman","Andy Dufraine","Greg Pask"],
+    ["Coutinho","Mo Salah","Firmino","Emre Can"],
+    ["Tottenham","Liverpool","Man City","Chelsea"],
+    ["Henderson","Mo Salah","Firmino","Coutinho"],
+    ["1st","2nd","3rd","4th"]
+]
+
+
+answers = [
+    ["John W. Henry"],
+    ["Mo Salah"],
+    ["Man City"],
+    ["Henderson"],
+    ["4th"]
+]
+
+
+
+function gameOverMan(){
+    
+    document.getElementById("results").style.display = "block";
+    document.getElementById("questions").style.display = "none";
+}
+
+
+
+    $(document).ready(function(){
+            
+        $("#btn1").click(function(){
+           $("#start").slideUp(1000);
+           
+           $("questions").slideUp(2000);
+           $("#questions").css("display", "block");    
+        });
+
+
+
+        $("#btn2").click(function(){
+            $("#results").slideUp(1000);
+            $("#score").slideDown(1000);
+            $("#score").css("display","block");
+            $("#score").html("Score: " + (correct) + "/" + 5);
+            $("#playAgain").css("display","block");
+        });
+
+
+        $("#playAgain").click(function(){
+            correct = 0;
+            incorrect = 0;
+            questionNumber = 0;
+            $(this).css("display","none");
+            $("#score").css("display","none");
+            $("#questions").css("display","block");
+            
+            $("#new").html("Questions 1");
+            $("#starter").html(questions[0]);
+            $("#a1").html(options[0][0])
+            $("#a2").html(options[0][1])
+            $("#a3").html(options[0][2])
+            $("#a4").html(options[0][3])
+
+
+
+
+
+
+        });
+    });
+        
+</script>
+</body>
+</html>
